@@ -1,5 +1,8 @@
 # Company User Management
-A web application for managing companies and users, built with Node.js for the backend and React for the frontend.
+A web application for managing companies and users.
+The backend is built using Node.js and Express, implementing a RESTful API for CRUD operations.
+The frontend is built with React.
+You can use tools like Postman to test the API endpoints. 
 
 ## Setup Instructions
 
@@ -15,7 +18,7 @@ A web application for managing companies and users, built with Node.js for the b
 CREATE TABLE companies (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
-    address VARCHAR(255) NOT NULL,
+    address VARCHAR(500) NOT NULL,
     latitude DECIMAL(10, 8),
     longitude DECIMAL(11, 8)
 );
@@ -24,7 +27,7 @@ CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
     first_name VARCHAR(255) NOT NULL,
     last_name VARCHAR(255) NOT NULL,
-    email VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL UNIQUE,
     designation VARCHAR(255),
     active BOOLEAN DEFAULT TRUE,
     company_id INT,
@@ -85,6 +88,6 @@ npm install
 npm start
 ```
 
-```
+
 
 
